@@ -18,7 +18,7 @@
 footer{
     width: 100%;
     height: 200px;
-    background-color:#212529 ;
+    background-color:#042752 ;
 }
 .card{
     border: none;
@@ -31,6 +31,7 @@ footer{
 .btn{
    margin-right: 11px;
    margin-top: 4px;
+   color: white;
  
 }
 
@@ -44,14 +45,22 @@ footer{
     
     width: 100%;
    
-    background-color:#212529 ;
+    /* background-color:#042752 ; */
    
 }
 .col-4{
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
 .col123{
-    width: 100px; 
+    width: 70px; 
     height: auto;
+}
+.page2{
+    margin-top: 40px;
+}
+
+#git{
+      width: 60px;
 }
