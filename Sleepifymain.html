@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="sleepifymain.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+  <script src="jquery-3.5.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+  </script>
+  <title>Sleepify</title>
+</head>
+
+<body>
+  <html>
+
+  <body onload="startTime()">
+    <header>
+      <div class="nav1">
+        <!-- navigation menu  -->
+        <nav class="navbar navbar-expand-lg navbar-dark "
+          style=" background: linear-gradient(to left, #121116 ,#745e54)">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="landing.html">Sleepify</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="#">Statistics</a>
+                <a class="nav-link" href="music.html">Music</a>
+                <a class="nav-link" href="#">Settings</a>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- login Modal -->
+
+        </nav>
+      </div>
+    </header>
+    <img src="./image/main2.png" class="img-fluid " alt="..." style="width: 100%;" data-aos="fade-in" />
+    <div class="clock container-fluid" style="background-color: #121116 ; font-family: 'Dancing Script', cursive;">
+      <div id="txt" style="display: flex; justify-content: center; font-size: 4rem; color: #b99685;"></div>
+      <div class="day" style="color: #b99685; display: flex; justify-content: center; font-size: 2rem;">Saturday</div>
+
+    </div>
+    <div style="background-color: #9e7562; display: flex; justify-content: center;">_______________________</div>
+
+    <div class="text"
+      style="display: flex; justify-content: center; font-size: 2rem;  color: rgb(0, 0, 0); padding-top: 20px; background-color: #9e7562;">
+      Sleep Diary</div>
+    <div style="background-color: #9e7562; display: flex; justify-content: center;">_______________________</div>
+
+    <div class="container-fluid" style=" padding: 0%;">
+      <div class="row  " style="width: 100%; background-color: #9e7562;">
+        <div class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 ">
+          <div class="card"
+            style="background-color: rgba(255, 255, 255, 0.1); box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5); border-radius: 20px; height: 13rem;">
+            <h1 style="font-size: 2rem; display: flex; justify-content: center; color: rgb(0, 0, 0);">Sleep Slot</h1>
+            <ul class="list-group list-group-flush">
+              <li class="items">Sleeping Time<input class="inputs" type="time"></li>
+              <li class="items" style="margin-top: 18px;">Wake Up Time<input class="inputs" type="time"></li>
+
+            </ul>
+            <button type="button" class="btn btn-outline-dark btns" id="button1" name="answer"
+              onclick="ShowDiv1()">+</button>
+          </div>
+
+        </div>
+        <div class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 ">
+
+          <div class="card" id="myDiv1"
+            style="background-color: rgba(255, 255, 255, 0.1); box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5); border-radius: 20px; height: 13rem; display: none;">
+            <h1
+              style="font-size: 2rem; display: flex; justify-content: center; align-items: center; color: rgb(0, 0, 0);">
+              Sleep Slot</h1>
+            <ul class="list-group list-group-flush">
+              <li class="items">Sleeping Time<input class="inputs" type="time"></li>
+              <li class="items" style="margin-top: 18px;">Wake Up Time<input class="inputs" type="time"></li>
+
+            </ul>
+            <button type="button" class="btn btn-outline-dark btns" id="button2" name="answer"
+              onclick="ShowDiv2()">+</button>
+          </div>
+
+        </div>
+        <div class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card" id="myDiv2"
+            style="background-color: rgba(255, 255, 255, 0.1); box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5); border-radius: 20px; height: 13rem; display: none;">
+            <h1
+              style="font-size: 2rem; display: flex; justify-content: center;  align-items: center; color: rgb(0, 0, 0);">
+              Sleep Slot</h1>
+            <ul class="list-group list-group-flush">
+              <li class="items">Sleeping Time<input class="inputs" type="time"></li>
+              <li class="items" style="margin-top: 18px;">Wake Up Time<input class="inputs" type="time"></li>
+
+            </ul>
+            <button type="button" class="btn btn-outline-dark btns" id="button3" name="answer"
+              onclick="ShowDiv3()">+</button>
+          </div>
+
+        </div>
+        <div class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card" id="myDiv3"
+            style="background-color: rgba(255, 255, 255, 0.1); box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5); border-radius: 20px; height: 13rem; display: none;">
+            <h1
+              style="font-size: 2rem; display: flex; justify-content: center;  align-items: center; color: rgb(0, 0, 0);">
+              Sleep Slot</h1>
+            <ul class="list-group list-group-flush">
+              <li class="items">Sleeping Time<input class="inputs" type="time"></li>
+              <li class="items" style="margin-top: 18px;">Wake Up Time<input class="inputs" type="time"></li>
+
+            </ul>
+            <button type="button" class="btn btn-outline-dark btns" id="button4" name="answer"
+              onclick="ShowDiv4()">+</button>
+          </div>
+
+        </div>
+        <div class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card" id="myDiv4"
+            style="background-color: rgba(255, 255, 255, 0.1); box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5); border-radius: 20px; height: 13rem; display: none;">
+            <h1
+              style="font-size: 2rem; display: flex; justify-content: center;  align-items: center; color: rgb(0, 0, 0);">
+              Sleep Slot</h1>
+            <ul class="list-group list-group-flush">
+              <li class="items">Sleeping Time<input class="inputs" type="time"></li>
+              <li class="items" style="margin-top: 18px;">Wake Up Time<input class="inputs" type="time"></li>
+
+            </ul>
+            <button type="button" class="btn btn-outline-dark btns" id="button5" name="answer"
+              onclick="ShowDiv5()">+</button>
+          </div>
+
+        </div>
+        <div class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div class="card" id="myDiv5"
+            style="background-color: rgba(255, 255, 255, 0.1); box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5); border-radius: 20px; height: 13rem; display: none;">
+            <h1
+              style="font-size: 2rem; display: flex; justify-content: center; align-items: center; color: rgb(0, 0, 0);">
+              Sleep Slot</h1>
+            <ul class="list-group list-group-flush">
+              <li class="items">Sleeping Time<input class="inputs" type="time"></li>
+              <li class="items" style="margin-top: 18px;">Wake Up Time<input class="inputs" type="time"></li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+    </div>
+    
+
+    <footer>
+
+      <div class="footer1" style=" background-color: #121116; padding: 50px; color: white">Copyright &copy; 2021-22
+      </div>
+
+    </footer>
+    <script>
+      function startTime() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+        setTimeout(startTime, 1000);
+      }
+
+      function checkTime(i) {
+        if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+        return i;
+      }
+    </script>
+
+    <script>
+      function ShowDiv1() {
+        document.getElementById("myDiv1").style.display = "";
+        document.getElementById("button1").style.display = "none";
+        document.getElementById("button2").style.display = "";
+        document.getElementById("button4").style.display = "none";
+      }
+      function ShowDiv2() {
+        document.getElementById("myDiv2").style.display = "";
+        document.getElementById("button2").style.display = "none";
+        document.getElementById("button3").style.display = "";
+        document.getElementById("button4").style.display = "none";
+      }
+      function ShowDiv3() {
+        document.getElementById("myDiv3").style.display = "";
+        document.getElementById("button3").style.display = "none";
+        document.getElementById("button4").style.display = "";
+
+      }
+      function ShowDiv4() {
+        document.getElementById("myDiv4").style.display = "";
+        document.getElementById("button4").style.display = "none";
+        document.getElementById("button5").style.display = "";
+      }
+      function ShowDiv5() {
+        document.getElementById("myDiv5").style.display = "";
+        document.getElementById("button5").style.display = "none";
+      }
+    </script>
+
+
+  </body>
+
+  </html>
